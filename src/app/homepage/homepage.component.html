@@ -1,0 +1,91 @@
+<!-- <div class="wrapper">
+	<div class="inner__chat-list">
+
+	</div>
+	<div class="inner__chat">
+		<div class="container">
+			<div class="cont">
+				<p>Вы авторизованы!</p>
+				<p>{{UserNameFromArrayUser}}</p>
+				<button class="btn" (click)="logout()" [routerLink]="''">Выйти</button>
+
+			</div>
+
+		</div>
+
+
+		<div class="container">
+			
+
+			<input class="msginput" type="text" #newitem [(ngModel)]="message" placeholder="Введите ваше сообщение" />
+			<button class="btn btn-send" (click)="addItem(newitem.value)">Отправить</button>
+			<button class="btn" (click)="deleteEverything()">Удалить все</button>
+		</div>
+	</div>
+
+</div> -->
+
+
+
+
+<div class="block">
+
+	<div class="block__row">
+
+
+		<div class="block__element block__element_1">
+
+			<div class="block__content1">
+				<div class="items__list">
+					<div class="itemofchats">
+						<p class="chatlist__text">Главная</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block__content content__user">
+
+			<div class="cont">
+				<p>Вы авторизованы!</p>
+				<p class="text__user--owner ">{{UserNameFromArrayUser}}</p>
+
+				<button class="btn" (click)="logout()" [routerLink]="''">Выйти</button>
+
+
+			</div>
+
+
+		</div>
+		<div class="block__element block__element_2" id="messagesblock">
+
+
+			<div class="message" *ngFor="let item of items | async">
+
+				<div class="messages" [ngClass]="{Owner: item.user === this.UserNameFromArrayUser}">
+					<div class="info">
+						<p class="text__user" [innerText]="item.user"></p>
+						<p class="time">{{item.time}}</p>
+					</div>
+					<p class="text__msg" #textOfT [innerText]="item.text"></p>
+
+				</div>
+
+				<!-- <button class="btn" (click)="deleteItem(item.key)">Удалить</button> -->
+			</div>
+
+
+
+
+
+		</div>
+		<div class="block__content">
+
+			<div class="send__item">
+				<input class="msginput" type="text" #newitem [(ngModel)]="message" placeholder="Введите ваше сообщение" />
+				<button class="btn btn-send" (click)="addItem(newitem.value)">Отправить</button>
+			</div>
+
+		</div>
+
+	</div>
+</div>

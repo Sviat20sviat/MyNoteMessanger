@@ -1,0 +1,30 @@
+<div class="wrapper">
+	<div class="img-container">
+		<div class="image">
+			<img class="img__logo" src="../../assets/лого.png" alt="logo">
+		</div>
+	</div>
+	<div class="container">
+		<form action="" class="form" (ngSubmit)='submitForm()' #form="ngForm">
+			<h1 class="h1text">Авторизация в MyNoteMessenger</h1>
+			<h2 class="h1text h2text">Пожалуйста ввдедите email и пароль <br> вашей учетной записи</h2>
+			<div class="inner">
+				<p class="text">Введите логин:</p>
+				<input class="input" type="text" #email="ngModel" ngModel name="login" required email placeholder="email" />
+				<p *ngIf="email.invalid && email.touched"> Введите правильный email!</p>
+				<p class="text">Введите пароль:</p>
+				<input class="input" type="password" ngModel name="password" required #password="ngModel"
+					placeholder="пароль" />
+				<p *ngIf="password.invalid && password.touched"> Введите правильный пароль!</p>
+				<button class="btn" (click)="onSignin(email.value,password.value)" type="submit"
+					[disabled]="!form.valid && !isSignedIn">Войти</button>
+				<p class="text">Еще не зарегестрированы? <a [routerLink]="'/signup'">Зарегестрироваться </a> можно прямо
+					сейчас!
+				</p>
+			</div>
+
+		</form>
+	</div>
+
+
+</div>

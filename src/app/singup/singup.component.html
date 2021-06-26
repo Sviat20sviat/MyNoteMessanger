@@ -1,0 +1,30 @@
+<div>
+
+	<div class="img-container">
+		<div class="image">
+			<img class="img__logo" src="../../assets/лого.png" alt="logo">
+		</div>
+	</div>
+	<div class="form">
+		<form action="" class="form" (ngSubmit)='submitForm()' #form="ngForm">
+			<div class="inner">
+				<h2 class="title">Регистрация в MyNoteMessenger</h2>
+				<p class="text">Введите логин:</p>
+				<input class="input" type="text" #emailSignup="ngModel" ngModel name="login" required email />
+				<p *ngIf="emailSignup.invalid && emailSignup.touched"> Введите правильный email!</p>
+
+				<p class="text">Введите никнейм:</p>
+				<input class="input" type="text" #nickname>
+
+				<p class="text">Введите пароль:</p>
+				<input class="input" type="password" #passwordSignup="ngModel" ngModel name="password" required />
+				<p *ngIf="passwordSignup.invalid && passwordSignup.touched"> Пароль не должен быть меньше 6 символов!</p>
+				<button class="btn" (click)="onSignup(emailSignup.value, passwordSignup.value, nickname.value)"
+					type="submit" [disabled]="!form.valid ">Зарегестрироваться</button>
+				<a class="link" [routerLink]="''">Назад к авторизации</a>
+			</div>
+		</form>
+
+	</div>
+</div>
+<!-- *ngIf="!isSignedIn" class="elem elem__first"-->

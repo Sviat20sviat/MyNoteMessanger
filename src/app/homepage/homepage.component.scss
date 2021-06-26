@@ -1,0 +1,254 @@
+@import url(  "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+.wrapper{
+	width: 100%;
+	display: flex;
+	background: url('https://klike.net/uploads/posts/2020-09/1599896421_21.jpg') 0 0/cover no-repeat;
+	height: auto;
+	min-height: 100%;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+}
+.container {
+	max-width: 700px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	padding: 40px;
+	
+	border-radius: 15px;
+	background-color: rgba(0, 194, 253, 0.5);
+	
+}
+
+	.messages{
+		max-width: 500px;
+		margin: 10px 30px;
+	border-radius: 15px;
+	background-color: rgb(255, 255, 255);
+	padding: 5px 10px;
+	font-size: 16px;
+	color: rgb(0, 0, 0);
+	//margin-left: 100px;
+	}
+
+	.Owner{
+		background-color: rgb(238,254,223);
+		
+		margin-left: auto;
+	
+	}
+	.Owner .text__user{
+		color:rgb(166, 149, 231);
+	}
+
+	.msginput{
+		width: 70%;
+		height: 50px;
+		font-size: 16px;
+		border-radius:10px ;
+		//border: 2px solid rgb(0, 81, 255);
+		//background-color: rgba(105, 220, 255, 0.664);
+		padding: 0 10px 0;
+		font-family: Roboto, "Helvetica Neue", sans-serif;
+
+	}
+
+	.btn{
+		margin: 10px;
+		width: 150px;
+		height: 30px;
+		border-radius: 10px;
+		// border: 2px solid rgb(0, 102, 255);
+	  background-color: rgb(76,144,230);;
+	  color: rgb(255, 255, 255);
+	  transition: 500ms;
+	}
+	.btn:hover{
+		background-color: rgb(121, 169, 231);
+		transition: 500ms;
+	}
+	.btn-send:hover{
+		//border: 2px solid rgb(0, 255, 179);
+	}
+
+	.inner__chatlist{
+		min-width: 100px;
+		flex: 0 0 200px;
+	}
+
+	.inner__chat{
+		flex: 1 1 auto;
+	}
+
+
+
+
+	.block{
+    height: 100%;
+	}
+	
+	
+	.block__row{
+	height: 100%;
+	
+	
+	//border: 10px solid #ece89d;
+	display:flex;
+	
+	}
+	
+	
+	.block__element{
+		position: relative;
+	//border: 5px solid #5e5373;
+	}
+	
+	
+	.block__element_1{
+	
+	flex: 0 0 25%;
+	
+
+	}
+	
+	
+	.block__element_2{
+   background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+	flex: 1 1 auto;
+	position: relative;
+
+	overflow: scroll;
+	padding-bottom: 100px;
+	}
+	
+	
+	.block__content{
+	 position: absolute;
+	 bottom: 0;
+	 display: flex;
+	 width: 800px;
+	margin-left: 30%;
+
+	
+	
+	}
+
+	
+
+	.send__item{
+			display: flex;
+		flex:  1 1 auto;
+		padding-left: 50px;
+		//min-width: 500px;
+		max-width: 100%;
+		margin-bottom: 20px;
+		
+	}
+
+	.massege{
+		background: #000;
+	}
+	
+
+	
+	p{
+		margin: 0;
+	}
+
+	.text__user{
+		color: #6ec9cb;
+	}
+	.text__msg{
+
+	}
+	.info{
+		display: flex;
+		justify-content:space-between;
+	}
+	.time{
+		font-size: 12px;
+		color: rgb(80, 83, 32);
+	}
+	.content__user{
+		top: 0;
+		background: rgb(255, 255, 255);
+		z-index: 5;
+		height: 50px;
+		margin-top: 5px;
+		border-radius: 10px;
+		//display: flex;
+		
+	}
+
+	.cont{
+		display: flex;
+		flex: 1 1 auto;
+		justify-content:space-around;
+	}
+
+	.cont p{
+		margin-top: 10px;
+	}
+
+	.text__user--owner{
+		color:rgb(166, 149, 231);
+		font-size: 18px;
+	}
+
+	.itemofchats{
+		height: 50px;
+		background-color: rgb(76,144,230);
+		margin: 10px;
+		border-radius: 10px;
+		transition: 0.5s;
+	}
+
+	.chatlist__text{
+		text-align: center;
+		padding-top: 15px;
+		font-size: 18px;
+		color: rgb(255, 255, 255);
+	}
+
+	.itemofchats:hover{
+		background-color: rgb(100, 155, 226);
+		transition: 0.5S;
+	}
+	@media (max-width:1080px) {
+		.block__element_1{
+			display: none;
+		}
+
+		.block__content{
+			margin-left: 50px;
+		}
+
+		
+	}
+
+
+	@media (max-width:855px){
+		.block__content{
+			width: 100%;
+			margin-left: auto;
+		}
+
+		
+	}
+	@media (max-width:570px){
+		.send__item{
+			padding-left: 5px;
+		}
+		.messages{
+			margin: 10px 5px 10px 0;
+		}
+		.Owner{
+			margin: 10px 0px 10px 5px;
+		}
+		.btn{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			font-size: 10px;
+			margin-top: auto;
+		}
+	}

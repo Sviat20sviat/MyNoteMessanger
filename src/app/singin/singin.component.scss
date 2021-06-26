@@ -1,0 +1,87 @@
+
+body{
+	background-color: rgb(207, 207, 207);
+}
+
+.wrapper {
+	width: 100%;
+	background-color: rgb(255, 255, 255);
+}
+.container{
+// 	position: absolute;
+// 	max-width: 500px;
+// 	margin: 0px auto;
+// 	left: 0; right: 0;
+ }
+
+.inner {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	margin: 0 auto;
+}
+.h1text{
+	
+	text-align: center;
+}
+
+.h2text{
+	font-weight:300;
+	color: rgb(129, 129, 129);
+}
+
+.input {
+   border: 1px solid #cccccc; 
+   border-radius: 10px;  
+   background: #ffffff !important; 
+   outline: none; 
+   height: 40px; 
+	max-width: 360px;
+   color: #000000; 
+   font-size: 16px;
+   font-family: Tahoma; 
+	transition: 0.5s;
+	text-align: center;
+}
+
+.input:hover{
+	border: 1px solid #0059ff; 
+	transition: 0.5s;
+}
+
+.btn{
+	height: 40px;
+	max-width: 360px ;
+	margin-top: 19px;
+	border-radius: 10px;
+  
+  transition: 0.5s;
+}
+
+.btn:hover{
+	background-color: rgba(105, 175, 255, 0.664);
+	transition: 0.5s;
+}
+
+.title{
+	
+
+}
+.text{
+color: rgb(102, 102, 102);
+
+}
+.image{
+max-width: 250px;
+margin: 0 auto;
+}
+
+.img__logo{
+width: 250px;
+}
+
+input.ng-invalid.ng-touched{
+	border: 1px solid red;
+}
+
