@@ -18,7 +18,15 @@ export class SinginComponent implements OnInit {
   @ViewChild('form') form: NgForm;
 
   title = 'firebase-angular-auth';
-  isSignedIn = false
+
+  errorMsg: string;
+
+  isSignedIn: boolean = false;
+
+  isSubmited = false;
+
+  formData = {};
+
   ngOnInit() {
     if (localStorage.getItem('user') !== null)
       this.isSignedIn = true
@@ -27,16 +35,18 @@ export class SinginComponent implements OnInit {
   }
 
   async onSignin(email: string, password: string) {
-    await this.firebaseService.signin(email, password)
-    if (this.firebaseService.isLoggedIn) {
-      this.isSignedIn = true
-      this.route.navigate(['messenger'])
-    }
-
+    this.firebaseService.signin(email, password).then((res) => {
+      if (this.firebaseService.isLoggedIn) {
+        this.isSignedIn = true
+        this.route.navigate(['messenger'])
+      }
+      this.firebaseService.setUserOnline()
+    }).catch(error => this.errorMsg = error.message);
   }
+
   handleLogout() {
     this.isSignedIn = false
-    //localStorage.setItem('nickname' login.nickname)
+    
   }
 
   submitForm() {
@@ -45,7 +55,5 @@ export class SinginComponent implements OnInit {
     this.formData = this.form.value
   }
 
-  isSubmited = false;
-
-  formData = {};
+    
 }

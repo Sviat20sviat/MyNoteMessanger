@@ -16,6 +16,7 @@
 				<input class="input" type="password" ngModel name="password" required #password="ngModel"
 					placeholder="пароль" />
 				<p *ngIf="password.invalid && password.touched"> Введите правильный пароль!</p>
+				<p class="error">{{errorMsg}}</p>
 				<button class="btn" (click)="onSignin(email.value,password.value)" type="submit"
 					[disabled]="!form.valid && !isSignedIn">Войти</button>
 				<p class="text">Еще не зарегестрированы? <a [routerLink]="'/signup'">Зарегестрироваться </a> можно прямо

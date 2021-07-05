@@ -10,21 +10,28 @@
 			<div class="inner">
 				<h2 class="title">Регистрация в MyNoteMessenger</h2>
 				<p class="text">Введите логин:</p>
-				<input class="input" type="text" #emailSignup="ngModel" ngModel name="login" required email />
+				<input class="input" type="text" #emailSignup="ngModel" ngModel name="login" required email maxLength="100"/>
 				<p *ngIf="emailSignup.invalid && emailSignup.touched"> Введите правильный email!</p>
 
 				<p class="text">Введите никнейм:</p>
-				<input class="input" type="text" #nickname>
-
+				<input class="input" type="text" #nickname="ngModel" ngModel name="nickname"required minlength="4">
+				<p *ngIf="nickname.invalid && nickname.touched"> Имя не менее четырех символов.</p>
 				<p class="text">Введите пароль:</p>
-				<input class="input" type="password" #passwordSignup="ngModel" ngModel name="password" required />
+				<input class="input" type="password" #passwordSignup="ngModel" ngModel name="password" required minlength="6"/>
 				<p *ngIf="passwordSignup.invalid && passwordSignup.touched"> Пароль не должен быть меньше 6 символов!</p>
-				<button class="btn" (click)="onSignup(emailSignup.value, passwordSignup.value, nickname.value)"
-					type="submit" [disabled]="!form.valid ">Зарегестрироваться</button>
+				<p class="text" >Повторите пароль</p>
+				<input class="input" type="password" #passwordrepeat="ngModel" ngModel name="passwordrepeat" required pattern="{{passwordSignup.value}}" >
+				<p *ngIf="passwordrepeat.invalid && passwordrepeat.touched"> Пароли не совпадают!</p>
+				<p class="error">
+					{{errorMsg}}
+				</p>
+				<button class="btn" (click)="onSignup(emailSignup.value, passwordSignup.value, nickname.value, passwordrepeat.value)"
+					type="submit" [disabled]="!form.valid  ">Зарегестрироваться</button>
 				<a class="link" [routerLink]="''">Назад к авторизации</a>
+				
 			</div>
 		</form>
 
 	</div>
 </div>
-<!-- *ngIf="!isSignedIn" class="elem elem__first"-->
+

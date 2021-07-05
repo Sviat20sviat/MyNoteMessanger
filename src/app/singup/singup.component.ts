@@ -12,21 +12,28 @@ import { Router } from '@angular/router';
 export class SingupComponent implements OnInit {
 
   constructor(public firebaseService: FereserviceService, private route: Router) { }
+
   isSignedIn = true
+
+  errorMsg: string;
+
   ngOnInit(): void {
 
   }
 
-  async onSignup(email: string, password: string, nick: string) {
+  async onSignup(email: string, password: string, nick: string, pswrepeat: string) {
     this.firebaseService.signup(email, password, nick).then((res) => {
-      if (this.firebaseService.isLoggedIn) {
+      if (this.firebaseService.isLoggedIn ) {
         console.log(res)
         // this.firebaseService.nickname = nick;
         this.isSignedIn = true
-        this.route.navigate(['/messenger'])
-
+        
       }
-    })
+      
+      setTimeout(() => {this.firebaseService.setUserOnline() }, 1000);
+      this.route.navigate(['messenger']);
+
+    }).catch(error => this.errorMsg = error.message)
   }
 
   submitForm() {

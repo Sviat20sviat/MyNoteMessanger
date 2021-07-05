@@ -6,12 +6,7 @@ body{
 	width: 100%;
 	background-color: rgb(255, 255, 255);
 }
-.container{
-// 	position: absolute;
-// 	max-width: 500px;
-// 	margin: 0px auto;
-// 	left: 0; right: 0;
- }
+
 
 .inner {
 	text-align: left;
@@ -84,4 +79,9 @@ input.ng-invalid.ng-touched{
 
 .link{
 	margin-top: 20px;
+}
+
+.error{
+	color: red;
+
 }

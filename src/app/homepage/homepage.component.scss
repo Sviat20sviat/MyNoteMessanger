@@ -66,9 +66,7 @@
 		background-color: rgb(121, 169, 231);
 		transition: 500ms;
 	}
-	.btn-send:hover{
-		//border: 2px solid rgb(0, 255, 179);
-	}
+	
 
 	.inner__chatlist{
 		min-width: 100px;
@@ -80,7 +78,11 @@
 	}
 
 
-
+	.text{
+		color: #000;
+		text-align: center;
+		font-size: 18px;
+	}
 
 	.block{
     height: 100%;
@@ -116,8 +118,10 @@
 	flex: 1 1 auto;
 	position: relative;
 
-	overflow: scroll;
+	//overflow: scroll;
+	overflow-x: hidden;
 	padding-bottom: 100px;
+	padding-top: 100px;
 	}
 	
 	
@@ -157,9 +161,7 @@
 	.text__user{
 		color: #6ec9cb;
 	}
-	.text__msg{
-
-	}
+	
 	.info{
 		display: flex;
 		justify-content:space-between;
@@ -213,6 +215,16 @@
 		background-color: rgb(100, 155, 226);
 		transition: 0.5S;
 	}
+
+ .user-item{
+ display: flex;
+ flex-direction: column;
+ margin: 10px 5px;
+ background-color: #f69d3c;
+ border-radius: 8px;
+ font-size: 18px;
+ }
+
 	@media (max-width:1080px) {
 		.block__element_1{
 			display: none;
